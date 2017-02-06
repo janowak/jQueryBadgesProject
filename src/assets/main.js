@@ -5,7 +5,10 @@ $(function() {
     url: 'https://www.codeschool.com/users/3256685.json',
     dataType: 'jsonp',
     success: function(response) {
-      // handle response
+      var badgesElement = $('#badges');
+      response.courses.completed.forEach(function(element) {
+        badgesElement.add("<div class='course'></div>");
+      })
     }
   });
 
